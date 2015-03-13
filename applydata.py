@@ -1,8 +1,9 @@
-import urllib.request
-from bs4 import BeautifulSoup
+test = "[15Fall . MS . AD无奖 ] [ DateScience/Analytics @ MSDS@NYU ] - 2015-03-07 - T : 107 + G : 321 () 本科：南大，浙大，复旦，上交 , ... 2 3"
 
-req =  urllib.request.urlopen('http://www.1point3acres.com/bbs/')
-the_page = req.read()
-unicode_page = the_page.decode("utf-8")
-parser = BeautifulSoup(unicode_page)
-print (parser.title)
+new_string = test.replace(" " , "").split("]")
+univer_info =  new_string[1].replace("[", "").split("@")
+date = new_string[2].split("-")
+print(date)
+print(univer_info)
+
+
